@@ -15,7 +15,7 @@ app.use(express.json())
 app.use(cookieParser())
 // this allow post request at host 5173
 app.use(cors({
-    origin:"http://localhost:5173",
+    origin:"https://airbnbdeploy-frontend.onrender.com",
     credentials:true
 }))
 
