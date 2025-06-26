@@ -18,8 +18,8 @@ export const sighUp=async (req,res) => {
         // this token is valid for 7 days and store in cookie
         res.cookie("token",token,{
             httpOnly:true, //local server 
-            secure:process.env.NODE_ENVIRONMENT = "production",
-            sameSite: "strict",
+            secure:true,
+            sameSite: "none",
             maxAge: 7 * 24 * 60 * 60 * 1000
 
 
@@ -47,8 +47,8 @@ export const login = async (req,res) => {
         let token = await genToken(user._id)
         res.cookie("token",token,{
             httpOnly:true,
-            secure:process.env.NODE_ENVIRONMENT = "production",
-            sameSite: "strict",
+            secure:true,
+            sameSite: "none",
             maxAge: 7 * 24 * 60 * 60 * 1000 // convert in milisecond
 
 
